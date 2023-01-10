@@ -1,0 +1,13 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: django-test
+  namespace: github-runner
+spec:
+  replicas: 1
+  template:
+    spec:
+      image: summerwind/actions-runner-dind
+      dockerdWithinRunnerContainer: true
+      repository: nvtienanh/django-test-github-runner-self-host-k8s
+      env: []
